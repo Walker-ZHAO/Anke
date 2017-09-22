@@ -1,4 +1,4 @@
-package com.walker.anke
+package com.walker.com
 
 import android.view.LayoutInflater
 import android.view.View
