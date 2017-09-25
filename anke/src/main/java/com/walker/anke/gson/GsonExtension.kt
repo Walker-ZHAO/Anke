@@ -1,4 +1,4 @@
-package com.walker.com.gson
+package com.walker.anke.gson
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
