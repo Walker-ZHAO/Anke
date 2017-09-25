@@ -14,7 +14,7 @@ package com.walker.anke
  * @param block 需要执行的操作
  *
  */
-inline fun consum(block: () -> Unit): Boolean {
+inline fun consume(block: () -> Unit): Boolean {
     block()
     return true
 }
