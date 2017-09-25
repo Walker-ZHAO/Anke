@@ -34,4 +34,6 @@ dependencies {
         exclude group: 'com.google.android', module: 'android'
     }
     implementation "org.jetbrains.kotlin:kotlin-reflect:$reflect_version"
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.1'
 }

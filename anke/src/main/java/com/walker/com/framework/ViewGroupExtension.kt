@@ -1,9 +1,8 @@
-package com.walker.com
+package com.walker.com.framework
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import org.jetbrains.anko.layoutInflater
 
 /**
  * ViewGroup 扩展

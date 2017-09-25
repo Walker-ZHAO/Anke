@@ -1,4 +1,4 @@
-package com.walker.com
+package com.walker.com.framework
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
