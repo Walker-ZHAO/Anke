@@ -28,7 +28,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
+    implementation "com.android.support:support-v13:$SUPPORT_LIB_VERSION"
+    implementation "com.android.support:design:$SUPPORT_LIB_VERSION"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -40,4 +42,12 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect:$reflect_version"
     // Gson
     implementation 'com.google.code.gson:gson:2.8.1'
+    // Retrofit
+    implementation ('com.squareup.retrofit2:retrofit:2.2.0') {
+        exclude module: 'okhttp'
+    }
+}
+
+androidExtensions {
+    experimental = true
 }
