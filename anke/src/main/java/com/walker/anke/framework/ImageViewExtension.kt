@@ -1,3 +1,4 @@
+@file:JvmName("ImageViewUtils")
 package com.walker.anke.framework
 
 import android.graphics.Bitmap

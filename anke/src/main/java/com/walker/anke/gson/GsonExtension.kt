@@ -1,3 +1,4 @@
+@file:JvmName("GsonUtils")
 package com.walker.anke.gson
 
 import com.google.gson.Gson

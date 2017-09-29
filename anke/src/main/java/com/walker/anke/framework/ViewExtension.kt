@@ -1,3 +1,4 @@
+@file:JvmName("ViewUtils")
 package com.walker.anke.framework
 
 import android.view.View

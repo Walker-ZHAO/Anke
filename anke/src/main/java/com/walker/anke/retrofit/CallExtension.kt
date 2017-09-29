@@ -1,3 +1,4 @@
+@file:JvmName("CallUtils")
 package com.walker.anke.retrofit
 
 import retrofit2.Call

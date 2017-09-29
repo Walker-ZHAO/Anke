@@ -1,3 +1,4 @@
+@file:JvmName("ViewGroupUtils")
 package com.walker.anke.framework
 
 import android.view.LayoutInflater
@@ -16,12 +17,14 @@ import android.view.ViewGroup
  * 填充子View
  *
  * @param layoutRes 子View的layout资源ID
+ * @param attachToRoot 是否附上根View参数
  *
  * @return 填充后的View
  *
  */
-fun ViewGroup.inflate(layoutRes: Int): View {
-    return LayoutInflater.from(context).inflate(layoutRes, this, false)
+@JvmOverloads
+fun ViewGroup.inflate(layoutRes: Int, attachToRoot: Boolean = false): View {
+    return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 }
 
 // 所有子View集合
