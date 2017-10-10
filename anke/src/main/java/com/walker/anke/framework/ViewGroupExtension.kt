@@ -30,3 +30,13 @@ fun ViewGroup.inflate(layoutRes: Int, attachToRoot: Boolean = false): View {
 // 所有子View集合
 val ViewGroup.children: List<View>
     get() = (0 until childCount).map { getChildAt(it) }
+
+val ViewGroup.views: List<View>
+    get() = (0 until  childCount).flatMap {
+        with(getChildAt(it)) {
+            when (this) {
+                is ViewGroup    ->  this.views
+                else    ->  listOf(this)
+            }
+        }
+    }
