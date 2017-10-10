@@ -40,3 +40,11 @@ val ViewGroup.views: List<View>
             }
         }
     }
+
+/**
+ * [ ] 运算符重载
+ *
+ * @param pos   子View的position
+ *
+ */
+operator fun ViewGroup.get(pos: Int): View = getChildAt(pos)
