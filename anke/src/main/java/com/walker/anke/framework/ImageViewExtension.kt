@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 import java.io.FileOutputStream
 
 /**
@@ -42,4 +43,14 @@ fun ImageView.setBase64(base64: String, flag: Int) {
         file.delete()
         setImageBitmap(thumb)
     }
+}
+
+/**
+ * 加载网络图片
+ *
+ * @param url   网络图片地址
+ *
+ */
+fun ImageView.loadUrl(url: String) {
+    Glide.with(this).load(url).into(this)
 }
