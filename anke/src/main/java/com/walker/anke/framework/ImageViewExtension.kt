@@ -5,8 +5,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
 import android.widget.ImageView
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.Logger
 import java.io.FileOutputStream
 
 /**
@@ -26,8 +24,6 @@ import java.io.FileOutputStream
  * @see [Base64]
  */
 fun ImageView.setBase64(base64: String, flag: Int) {
-    Logger.addLogAdapter(AndroidLogAdapter())
-    Logger.w("load image")
     if (base64.isNotEmpty()) {
         var thumb: Bitmap? = null
         val bytes = Base64.decode(base64, flag)
