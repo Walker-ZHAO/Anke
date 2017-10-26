@@ -41,7 +41,7 @@ dependencies {
     }
     implementation "org.jetbrains.kotlin:kotlin-reflect:$reflect_version"
     // Gson
-    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.google.code.gson:gson:2.8.2'
     // Retrofit
     implementation ('com.squareup.retrofit2:retrofit:2.2.0') {
         exclude module: 'okhttp'
