@@ -53,6 +53,20 @@ fun Context.disableNotificationBar() {
     }
 }
 
+/**
+ * 禁用通知栏及导航栏
+ */
+fun Context.disableBar() {
+    try {
+        val service = getSystemService("statusbar")
+        val statusbarManager = Class.forName("android.app.StatusBarManager")
+        val method = statusbarManager.getMethod("disable", Int::class.javaPrimitiveType)
+        method.invoke(service, DISABLE_EXPAND or DISABLE_NAVIGATION)
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+}
+
 val DISABLE_EXPAND = 0x00010000
 val DISABLE_NOTIFICATION_ICONS = 0x00020000
 val DISABLE_NOTIFICATION_ALERTS = 0x00040000
