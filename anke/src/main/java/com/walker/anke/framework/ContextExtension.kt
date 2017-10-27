@@ -24,7 +24,7 @@ val Context.processName: String?
 /**
  * 禁用导航栏
  *
- * Note: 需要使用系统签名
+ * Note: 需要使用系统签名，并共享系统UID
  */
 fun Context.disableNatigation() {
     try {
@@ -40,7 +40,7 @@ fun Context.disableNatigation() {
 /**
  * 禁用下拉通知栏
  *
- * Note: 需要使用系统签名
+ * Note: 需要使用系统签名，并共享系统UID
  */
 fun Context.disableNotificationBar() {
     try {
@@ -55,6 +55,8 @@ fun Context.disableNotificationBar() {
 
 /**
  * 禁用通知栏及导航栏
+ *
+ * Note: 需要使用系统签名，并共享系统UID
  */
 fun Context.disableBar() {
     try {
