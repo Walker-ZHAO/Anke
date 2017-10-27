@@ -73,9 +73,7 @@ fun Context.disableBar() {
 /**
  * 重启设备
  *
- * Note:
- *  1. 需要使用系统签名，并共享系统UID
- *  2. 声明REBOOT权限
+ * Note: 需要使用系统签名，并共享系统UID
  */
 fun Context.reboot(reason: String?) {
     powerManager.reboot(reason)
