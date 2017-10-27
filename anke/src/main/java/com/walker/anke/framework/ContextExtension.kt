@@ -3,6 +3,7 @@ package com.walker.anke.framework
 import android.content.Context
 import android.os.Process
 import org.jetbrains.anko.activityManager
+import org.jetbrains.anko.powerManager
 
 /**
  * Context 扩展
@@ -67,6 +68,17 @@ fun Context.disableBar() {
     } catch (e: Exception) {
         e.printStackTrace()
     }
+}
+
+/**
+ * 重启设备
+ *
+ * Note:
+ *  1. 需要使用系统签名，并共享系统UID
+ *  2. 声明REBOOT权限
+ */
+fun Context.reboot(reason: String?) {
+    powerManager.reboot(reason)
 }
 
 val DISABLE_EXPAND = 0x00010000
