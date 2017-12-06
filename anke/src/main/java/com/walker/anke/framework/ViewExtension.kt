@@ -21,6 +21,13 @@ fun View.visiable() {
 }
 
 /**
+ * 设置View不可见占位
+ */
+fun View.invisiable() {
+    visibility = View.INVISIBLE
+}
+
+/**
  * 设置View不可见
  */
 fun View.gone() {
