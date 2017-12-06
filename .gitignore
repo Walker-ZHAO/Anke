@@ -10,6 +10,7 @@
 /.idea/modules.xml
 /.idea/tasks.xml
 /.idea/workspace.xml
+/.idea/
 /local.properties
 /captures
 .externalNativeBuild
