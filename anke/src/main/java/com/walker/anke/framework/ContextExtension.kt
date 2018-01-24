@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Process
 import org.jetbrains.anko.activityManager
 import org.jetbrains.anko.powerManager
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 /**
  * Context 扩展
@@ -21,6 +23,35 @@ val Context.processName: String?
                 .filter { it.pid ==  Process.myPid() }
                 .map { it.processName }
                 .firstOrNull()
+
+/**
+ * 当前应用版本号
+ */
+val Context.packageVersionName: String
+    get() = packageManager.getPackageInfo(packageName, 0).versionName
+
+/**
+ * 是否是小米ROM
+ */
+val Context.isMiUi: Boolean
+    get() = getSystemProperty("ro.miui.ui.version.name").isNotEmpty()
+
+/**
+ * 是否是华为ROM
+ */
+val Context.isEmUi: Boolean
+    get() = getSystemProperty("ro.build.version.emui").isNotEmpty()
+
+/**
+ * 获取系统属性
+ */
+private fun getSystemProperty(propName: String): String {
+    val process = Runtime.getRuntime().exec("getprop $propName")
+    val input = BufferedReader(InputStreamReader(process.inputStream), 1024)
+    val line = input.readLine()
+    input.close()
+    return line
+}
 
 /**
  * 禁用导航栏
