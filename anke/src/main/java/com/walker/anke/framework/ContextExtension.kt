@@ -1,5 +1,7 @@
 package com.walker.anke.framework
 
+import android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND
+import android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE
 import android.content.Context
 import android.os.Process
 import org.jetbrains.anko.activityManager
@@ -29,6 +31,20 @@ val Context.processName: String?
  */
 val Context.packageVersionName: String
     get() = packageManager.getPackageInfo(packageName, 0).versionName
+
+/**
+ * 应该是否在后台运行
+ */
+val Context.isBackground: Boolean
+    get() {
+        val appProcess = activityManager.runningAppProcesses.firstOrNull{ it.processName == packageName }
+        return if (appProcess == null) {
+            false
+        } else {
+            appProcess.importance == IMPORTANCE_BACKGROUND || appProcess.importance == IMPORTANCE_SERVICE
+        }
+
+    }
 
 /**
  * 是否是小米ROM
