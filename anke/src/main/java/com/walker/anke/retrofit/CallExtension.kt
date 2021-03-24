@@ -16,4 +16,4 @@ import retrofit2.Call
  * 调用包装器
  * @param f 数据的处理函数
  */
-inline fun <T, R> Call<T>.unwrapCall(f: T.() -> R): R = execute().body().f()
+inline fun <T, R> Call<T>.unwrapCall(f: T.() -> R): R? = execute().body()?.f()

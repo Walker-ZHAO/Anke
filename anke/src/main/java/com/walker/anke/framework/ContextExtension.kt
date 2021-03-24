@@ -1,11 +1,12 @@
 package com.walker.anke.framework
 
+import android.annotation.SuppressLint
+import android.app.ActivityManager
 import android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND
 import android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE
 import android.content.Context
+import android.os.PowerManager
 import android.os.Process
-import org.jetbrains.anko.activityManager
-import org.jetbrains.anko.powerManager
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -74,6 +75,7 @@ private fun getSystemProperty(propName: String): String {
  *
  * Note: 需要使用系统签名，并共享系统UID
  */
+@SuppressLint("WrongConstant")
 fun Context.disableNatigation() {
     try {
         val service = getSystemService("statusbar")
@@ -90,6 +92,7 @@ fun Context.disableNatigation() {
  *
  * Note: 需要使用系统签名，并共享系统UID
  */
+@SuppressLint("WrongConstant")
 fun Context.disableNotificationBar() {
     try {
         val service = getSystemService("statusbar")
@@ -106,6 +109,7 @@ fun Context.disableNotificationBar() {
  *
  * Note: 需要使用系统签名，并共享系统UID
  */
+@SuppressLint("WrongConstant")
 fun Context.disableBar() {
     try {
         val service = getSystemService("statusbar")
@@ -139,3 +143,9 @@ val DISABLE_SEARCH = 0x02000000
 val DISABLE_NONE = 0x00000000
 
 val DISABLE_NAVIGATION = DISABLE_HOME or DISABLE_RECENT
+
+val Context.activityManager: ActivityManager
+    get() = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+
+val Context.powerManager: PowerManager
+    get() = getSystemService(Context.POWER_SERVICE) as PowerManager

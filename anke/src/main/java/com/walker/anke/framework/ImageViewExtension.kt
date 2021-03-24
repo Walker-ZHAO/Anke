@@ -25,7 +25,7 @@ import java.io.FileOutputStream
  */
 fun ImageView.setBase64(base64: String, flag: Int) {
     if (base64.isNotEmpty()) {
-        var thumb: Bitmap? = null
+        var thumb: Bitmap?
         val bytes = Base64.decode(base64, flag)
         val file = createTempFile(suffix = ".png")
         var out: FileOutputStream? = null
