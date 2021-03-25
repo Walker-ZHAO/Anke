@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND
 import android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE
+import android.app.AlarmManager
 import android.content.Context
 import android.os.PowerManager
 import android.os.Process
@@ -149,3 +150,6 @@ val Context.activityManager: ActivityManager
 
 val Context.powerManager: PowerManager
     get() = getSystemService(Context.POWER_SERVICE) as PowerManager
+
+val Context.alarmManager: AlarmManager
+    get() = getSystemService(Context.ALARM_SERVICE) as AlarmManager
