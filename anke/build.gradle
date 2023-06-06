@@ -73,7 +73,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.Walker-ZHAO'
                 artifactId = 'Anke'
-                version = '0.2.2'
+                version = versions.name
             }
         }
     }

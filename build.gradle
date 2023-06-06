@@ -28,6 +28,6 @@ def versions = [:]
 versions.min_sdk = 21
 versions.target_sdk = 33
 versions.code = 4
-versions.name = "0.2.2"
+versions.name = "0.3.0"
 versions.support = "28.0.0"
 ext.versions = versions
