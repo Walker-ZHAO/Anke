@@ -4,11 +4,12 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.github.Walker-ZHAO'
+apply plugin: 'maven-publish'
 
 android {
+
+    namespace 'com.walker.anke'
+
     compileSdkVersion versions.target_sdk
     defaultConfig {
         minSdkVersion versions.min_sdk
@@ -26,6 +27,13 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 
@@ -49,4 +57,21 @@ dependencies {
 
 androidExtensions {
     experimental = true
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.Walker-ZHAO'
+                artifactId = 'Anke'
+                version = '0.2.2'
+            }
+        }
+    }
 }
